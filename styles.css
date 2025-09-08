@@ -1,7 +1,9 @@
 body {
     padding-top: 10px;
-    width: 40%;
+    width: 39em;
     margin: auto;
+    max-width: 94%;
+    line-height: 1.3em;
     font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -9,7 +11,12 @@ h1, h2, h3, h4, h5, h6 {
     content: "";
     padding-bottom: 2px;  
     border-bottom: 1px solid;
+}
+h1 {
     font-size: 1.3rem;
+}
+h2, h3, h4, h5, h6 {
+    font-size: 1.15rem;
 }
 pre {
     font-family: "JetBrains Mono NL", "JetBrains Mono", monospace;
@@ -18,4 +25,13 @@ pre {
 }
 code {
     font-family: "JetBrains Mono NL", "JetBrains Mono", monospace;
+}
+blockquote {
+    border-left: 2px solid;
+    padding-left: 10px;
+}
+.context {
+    border: 1px solid;
+    padding-left: 10px;
+    padding-right: 10px;
 }
