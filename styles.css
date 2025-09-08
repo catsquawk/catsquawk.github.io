@@ -1,8 +1,9 @@
 body {
     padding-top: 10px;
-    width: 39em;
+    width: 39rem;
     margin: auto;
-    max-width: 94%;
+    max-width: 90%;
+    min-width: 44%;
     line-height: 1.3em;
     font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif;
 }
