@@ -33,6 +33,8 @@ body {
     margin: auto;
     max-width: 42rem;
     line-height: 1.3em;
+	overflow-wrap: anywhere;
+	word-break: normal;
     font-size: 1.15rem;
     font-family: "Charter", "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif;
 }
