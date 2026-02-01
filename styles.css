@@ -21,6 +21,8 @@ pre, code, samp, kbd, span {
     font-family: "JetBrains Mono" !important;
     font-size: 0.9em;
     border: 1px #D3CEC9 solid;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 code, samp, kbd, span {
     background-color: #EBE9E6;
