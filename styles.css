@@ -2,21 +2,29 @@
 @font-face { font-family: "analog-whisper"; src: url(analog_whisp.ttf); }
 
 /* Base styles */
-.clean { border-top: none;  border-left: none; border-right: none; font-size: 1rem;}
+.clean { border: none; margin: nomne;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
 .name {
     font-family: "analog-whisper";
     font-weight: normal;
     color: #007891;
-    border-bottom: 1px solid #100F0F;
+    border-bottom: 1.5px solid #100F0F;
     letter-spacing: 2px;
-    border-bottom: 1px solid;
 }
+.name a {text-decoration: none; }
 .pxtext {
     font-family: "analog-whisper";
     font-weight: normal;
     color: #007891;
     letter-spacing: 2px;
     text-decoration: none;
+}
+hr {
+  height: 1.5px;
+  border: 0;
+  border-top: 1.5px solid #D3CEC9;
 }
 h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
@@ -85,7 +93,9 @@ th {
     a:visited {
         color: #ba55d3;
     }
-
+    hr {
+      border-top: 1.5px solid #5B5650;
+    }
     pre {
         background-color: #2D2B29;
         border: 2px solid #5B5650;
@@ -107,7 +117,7 @@ th {
     }
     .name {
         color: #14C8EB;
-        border-bottom: 1px solid #F7F5F2;
+        border-bottom: 1.5px solid #5B5650;
     }
     .pxtext {
         color: #14C8EB;
