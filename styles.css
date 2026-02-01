@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
-@font-face { font-family: "analog-whisper"; src: url(analog_whisp.ttf); }
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');@font-face { font-family: "analog-whisper"; src: url(analog_whisp.ttf); }
 
 /* Base styles */
 .clean { border: none; margin: nomne;
@@ -9,7 +8,7 @@
 .name {
     font-family: "analog-whisper";
     font-weight: normal;
-    color: #22A4E6;
+    color: #458588;
     border-bottom: 1.5px solid #D3CEC9;
     letter-spacing: 2px;
 }
@@ -17,7 +16,7 @@
 .pxtext {
     font-family: "analog-whisper";
     font-weight: normal;
-    color: #22A4E6;
+    color: #458588;
     letter-spacing: 2px;
     text-decoration: none;
 }
@@ -29,12 +28,12 @@ hr {
 h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
 }
-a:link { color: #22A4E6; }
+a:link { color: #458588; }
 body {
-    font-family:  "Bitter";
-    font-weight: 500;
+    font-family:  "Source Sans 3";
+    font-weight: normal;
     max-width: 33rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 1.5em;
     line-height: 1.5;
     margin: auto;
@@ -52,7 +51,7 @@ code, samp, kbd {
     background-color: #EBE9E6;
 }
 blockquote {
-    color: #6F6E69;
+    color: #828E9F;
 }
 pre {
     padding: 0.75em;
@@ -81,47 +80,47 @@ th {
 /* Dark styles */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #10141C;
-        color: #BFBDB6;
+        background-color: #1d2021;
+        color: #ebdbb2;
     }
     blockquote {
-        color: #D3CEC9;
+        color: #d5c481;
     }
     a:link {
-        color: #FFB454;
+        color: #d79921;
     }
 
     a:visited {
-        color: #E89D37;
+        color: #fabd2f;
     }
     hr {
       border-top: 1.5px solid #5B5650;
     }
     pre {
-        background-color: #5A637842;
-        border: 2px solid #5A6378A1;
+        background-color: #32302f;
+        border: 2px solid #504945;
         padding: 0.75em;
     }
     code, samp, kbd {
-        background-color: #5A637842;
-        border: 1px solid #5A6378A1;
+        background-color: #32302f;
+        border: 1px solid #504945;
     }
     pre code {
         color: #bbb;
     }
     td, th {
         font-size: 1em;
-        border: 1.5px solid #5A6378A1;
+        border: 1.5px solid #504945;
     }
     th {
-        background-color: #5A637842;
+        background-color: #32302f;
     }
     .name {
-        color: #FFB454;
-        border-bottom: 1.5px solid #5A6378A1;
+        color: #d79921;
+        border-bottom: 1.5px solid #3c3836;
     }
     .pxtext {
-        color: #FFB454;
+        color: #d79921;
     }
 }
 
