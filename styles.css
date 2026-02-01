@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base styles */
+h2, h3, h4, h5, h6 {
+    font-size: 1.25rem;
+}
+a:link { color: #007891; }
+h1 {
+    border-bottom: 1px solid;
+}
+body {
+    font-family:  "Public Sans";
+    max-width: 35rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: auto;
+    color: #100F0F;
+    background-color: #F7F5F2;
+}
+pre, code, samp, kbd, span {
+    font-family: "JetBrains Mono" !important;
+    font-size: 0.9em;
+    border: 1px #D3CEC9 solid;
+}
+code, samp, kbd, span {
+    background-color: #EBE9E6;
+}
+blockquote {
+    color: #6F6E69;
+}
+pre {
+    padding: 0.75em;
+    background-color: #EBE9E6;
+    border: 2px #D3CEC9 solid;
+}
+
+pre code {
+    color: #009;
+}
+pre kbd {
+    color: #090;
+}
+
+table,
+td, th {
+    font-size: 1em;
+    border: 1.5px #D3CEC9 solid;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+th {
+    background-color: #EBE9E6;
+}
+
+/* Dark styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1E1919;
+        color: #F7F5F2;
+    }
+    blockquote {
+        color: #D3CEC9;
+    }
+    a:link {
+        color: #14C8EB;
+    }
+
+    a:visited {
+        color: #ba55d3;
+    }
+
+    pre {
+        background-color: #2D2B29;
+        border: 2px solid #5B5650;
+        padding: 0.75em;
+    }
+    code, samp, kbd, span {
+        background-color: #2D2B29;
+        border: 1px solid #5B5650;
+    }
+    pre code {
+        color: #bbb;
+    }
+    td, th {
+        font-size: 1em;
+        border: 1.5px solid #5B5650;
+    }
+    span {
+        font-family: "jbmono";
+    }
+    th {
+        background-color: #2D2B29;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    img {
+        max-width: 100%;
+    }
+
+    pre {
+        overflow-y: scroll;
+    }
+}
