@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>txt to anki csv converter</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #334155;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: "Helvetica", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: none;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        h1 { margin-top: 0; font-size: 1.5rem; margin-bottom: 1.5rem; }
+
+        .file-drop-area {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        .file-drop-area:hover { border-color: var(--primary); }
+
+        input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover { opacity: 0.9; }
+        .btn:disabled { background-color: #94a3b8; cursor: not-allowed; }
+
+        #downloadSection {
+            margin-top: 1.5rem;
+            display: none; /* Hidden by default */
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        .status { margin-top: 10px; font-size: 0.9rem; color: #64748b; }
+        .error { color: #ef4444; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>txt to anki csv converter</h1>
+    <p>(P.S. we also have /quran.html/ and /seq.html/)</p>
+    
+    <div class="file-drop-area">
+        <span id="fileLabel">click to select or drag a text file</span>
+        <input type="file" id="fileInput" accept=".txt">
+    </div>
+
+    <button id="convertBtn" class="btn" disabled>convert</button>
+    <div id="statusMessage" class="status"></div>
+
+    <div id="downloadSection">
+        <p>conversion complete!</p>
+        <a id="downloadBtn" class="btn" href="#" download>download CSV</a>
+    </div>
+</div>
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const fileLabel = document.getElementById('fileLabel');
+    const convertBtn = document.getElementById('convertBtn');
+    const statusMessage = document.getElementById('statusMessage');
+    const downloadSection = document.getElementById('downloadSection');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    let selectedFile = null;
+
+    // Handle File Selection
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            selectedFile = e.target.files[0];
+            fileLabel.textContent = selectedFile.name;
+            convertBtn.disabled = false;
+            statusMessage.textContent = '';
+            statusMessage.className = 'status';
+            downloadSection.style.display = 'none';
+        }
+    });
+
+    // Handle Conversion
+    convertBtn.addEventListener('click', () => {
+        if (!selectedFile) return;
+
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            try {
+                const text = e.target.result;
+                const csvContent = parseToCSV(text);
+                prepareDownload(csvContent, selectedFile.name);
+            } catch (err) {
+                statusMessage.textContent = "Error parsing file. Please check the format.";
+                statusMessage.className = 'status error';
+                console.error(err);
+            }
+        };
+
+        reader.readAsText(selectedFile);
+    });
+
+    // Core Parsing Logic
+    function parseToCSV(rawText) {
+        // Normalize line endings to \n
+        const text = rawText.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+        const lines = text.split('\n');
+        
+        const rows = [];
+        let currentEntry = { q: null, a: null, c: null };
+        let currentMode = null; // 'q', 'a', or 'c'
+
+        lines.forEach(line => {
+            // Check for markers at the start of the line
+            // We use regex to check if line starts with Q:, A:, or C:
+            const match = line.match(/^([QAC]):\s?(.*)$/);
+
+            if (match) {
+                const marker = match[1];
+                const content = match[2];
+
+                if (marker === 'Q') {
+                    // If we were already building an entry, push it before starting new one
+                    if (currentEntry.q !== null) {
+                        rows.push(currentEntry);
+                    }
+                    // Reset for new entry
+                    currentEntry = { q: content, a: null, c: null };
+                    currentMode = 'q';
+                } else if (marker === 'A') {
+                    currentEntry.a = content;
+                    currentMode = 'a';
+                } else if (marker === 'C') {
+                    currentEntry.c = content;
+                    currentMode = 'c';
+                }
+            } else {
+                // Continuation of multiline text
+                if (currentMode === 'q' && currentEntry.q !== null) {
+                    currentEntry.q += '\n' + line;
+                } else if (currentMode === 'a' && currentEntry.a !== null) {
+                    currentEntry.a += '\n' + line;
+                } else if (currentMode === 'c' && currentEntry.c !== null) {
+                    currentEntry.c += '\n' + line;
+                }
+            }
+        });
+
+        // Push the last entry if it exists
+        if (currentEntry.q !== null) {
+            rows.push(currentEntry);
+        }
+
+        // Convert parsed objects to CSV string
+        // Note: We do NOT add a header row based on the example provided
+        return rows.map(row => {
+            const q = escapeCSV(row.q || "");
+            const a = escapeCSV(row.a || "");
+            const c = row.c ? escapeCSV(row.c) : ""; // Context is optional, can be empty
+            return `${q},${a},${c}`; // Standard CSV: comma separated
+        }).join('\n');
+    }
+
+    // Helper: Escape text for CSV (surround in quotes, escape internal quotes)
+    function escapeCSV(str) {
+        // Replace " with ""
+        const escaped = str.replace(/"/g, '""');
+        // Wrap entire field in double quotes
+        return `"${escaped}"`;
+    }
+
+    function prepareDownload(csvData, originalFilename) {
+        const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        
+        // Generate new filename: text.txt -> text.csv
+        const nameParts = originalFilename.split('.');
+        if (nameParts.length > 1) nameParts.pop(); // remove extension
+        const newFilename = nameParts.join('.') + ".csv";
+
+        downloadBtn.href = url;
+        downloadBtn.download = newFilename;
+        downloadBtn.textContent = `Download ${newFilename}`;
+        
+        downloadSection.style.display = 'block';
+        statusMessage.textContent = '';
+    }
+</script>
+
+</body>
+</html>
