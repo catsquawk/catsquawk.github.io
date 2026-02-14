@@ -36,6 +36,8 @@ body {
     color: #100F0F;
     background-color: #FFFCF0;
     overflow-wrap: break-word;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 a {
     color: #4385BE;
