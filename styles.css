@@ -18,10 +18,10 @@
 .logo {
     display: inline;
     transform: translateY(2.3em);
-    margin-right: 1em !important;
+    margin-right: 0.5em !important;
 }
 .headlinks {
-    transform: translateX(7.4em);
+    transform: translateX(6.9em);
     border: none;
 }
 .headlinks td {
