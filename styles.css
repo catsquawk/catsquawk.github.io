@@ -17,7 +17,7 @@
 /* Header styles */
 .logo {
     display: inline;
-    transform: translateY(2.25em);
+    transform: translateY(2.3em);
     margin-right: 1em !important;
 }
 .headlinks {
@@ -46,7 +46,7 @@ pre, code, kbd, samp, var {
     font-family: "JetBrains Mono";
     font-size: 0.85em;
 }
-figcaption {
+figcaption   {
     display: block;
     margin: auto;
     padding-top: 0.75em;
@@ -83,9 +83,6 @@ table:not(.headlinks table) td {
     body {
         background-color: #100F0F;
         color: #CECDC3;
-    }
-    .logo {
-    filter: invert(1) brightness(85%) sepia(20%) !important;
     }
     hr {
         border: 1px solid #403E3C;
