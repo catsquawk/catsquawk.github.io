@@ -36,6 +36,7 @@ h2 a, h3 a {
 
 /* Body styles */
 body {
+    font-size: 1.1em;
     margin: auto;
     font-family: "Clear Sans", sans-serif;
     max-width: 35em;
