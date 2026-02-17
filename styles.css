@@ -23,11 +23,11 @@ h2 a, h3 a {
 }
 .logo {
     display: inline;
-    transform: translateY(2.1em);
+    transform: translateY(2em);
     margin-right: 0.5em !important;
 }
 .headlinks {
-    transform: translateX(5.3em);
+    transform: translateX(4.9em);
     border: none;
 }
 .headlinks td {
