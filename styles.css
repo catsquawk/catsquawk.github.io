@@ -1,107 +1,94 @@
-@font-face {
-  font-family: "Clear Sans";
-  src: url(clear-b.woff);
-  font-weight: bold;
-}
-@font-face {
-  font-family: "Clear Sans";
-  src: url(clear-r.woff);
-  font-weight: normal;
-}
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url(jbmono.woff2);
-  font-weight: bold;
-}
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
 
-/* Header styles */
-h1, h2, h3 {
-    display: inline;
+@font-face {
+  font-family: "meslo-lg";
+  src: url(meslo-lg.ttf);
+  font-weight: bold;
 }
-h2 a, h3 a {
+h2 a {
     text-decoration: none;
 }
-.logo {
-    display: inline;
-    transform: translateY(2em);
-    margin-right: 0.5em !important;
-}
-.headlinks {
-    transform: translateX(4.9em);
-    border: none;
-}
-.headlinks td {
-    padding-right: 0.5em;
-}
-
-/* Body styles */
 body {
+    font-family: "STIX Two Text", serif;
     font-size: 1.1em;
-    margin: auto;
-    font-family: "Clear Sans", sans-serif;
-    max-width: 35em;
-    color: #100F0F;
-    background-color: #FFFCF0;
-    overflow-wrap: break-word;
     padding-left: 1em;
     padding-right: 1em;
-}
-a {
-    color: #4385BE;
-}
-pre, code, kbd, samp, var {
-    font-family: "JetBrains Mono";
-    font-size: 0.85em;
-}
-figcaption   {
-    display: block;
     margin: auto;
-    padding-top: 0.75em;
-    width: 20em;
+    overflow-wrap: break-word;
+    max-width: 38em;
 }
-img {
-    margin: auto;
-    display: flex;
+h1, h2, h3 {
+    font-size: 1.5em;
 }
 pre {
     white-space: pre-wrap;
-    background-color: #F2F0E5;
-    padding: 0.5em;
-    border: 5px solid #F2F0E5;
-    border-radius: 5px
 }
-hr {
-    border: 1px solid #CECDC3;
+pre, code, samp, kbd {
+    font-family: "meslo-lg", monospace;
+    font-size: 0.8em;
 }
-table:not(.headlinks table) {
-    margin: auto;
-    margin-top: 1em;
+table {
     border-collapse: collapse;
+    margin: auto;
 }
-table:not(.headlinks table) th,
-table:not(.headlinks table) td {
-    padding: 0.25em;
+th, td {
+    border: 1px solid;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+th {
     text-align: inherit;
-    border: 1px solid #CECDC3;
 }
-
-
-/* Dark theme styles */
+caption {
+    margin-bottom: 0.25em;
+}
+img {
+    display: flex;
+    margin: auto;
+}
+figcaption {
+    text-align: center;
+    margin-top: 0.25em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20em;
+}
+pre {
+    border: 1.5px solid;
+    padding: 0.5em;
+}
+code {
+    border: 1.5px solid;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+}
+/* toots */
+.toot {
+    border: 1px solid;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+.toot-h {
+    padding: 0.1em;
+    background-color: black;
+    color: white;
+}
+.toot p, i, strong {
+    padding: 0.5em;
+}
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #100F0F;
-        color: #CECDC3;
+        color: #F5F5F5;
+        background-color: #212121;
     }
-    hr {
-        border: 1px solid #403E3C;
+    a {
+        color: #FFE57F;
     }
-    pre {
-        color: #CECDC3;
-        background-color: #282726;
-        border-color: #282726;
+    pre, code, th, td {
+        border-color: white;
     }
-    table:not(.headlinks table) th,
-    table:not(.headlinks table) td {
-        border: 1px solid #403E3C;
+    .toot-h {
+        background-color: white;
+        color: black;
     }
 }
