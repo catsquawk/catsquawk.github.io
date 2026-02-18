@@ -1,94 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
-
 @font-face {
   font-family: "meslo-lg";
   src: url(meslo-lg.ttf);
   font-weight: bold;
 }
-h2 a {
-    text-decoration: none;
-}
-body {
-    font-family: "STIX Two Text", serif;
-    font-size: 1.1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    margin: auto;
+body, pre {
+    font-family: "meslo-lg";
     overflow-wrap: break-word;
-    max-width: 38em;
-}
-h1, h2, h3 {
-    font-size: 1.5em;
+    max-width: 35em;
+    margin: auto;
+    padding: 1em;
 }
 pre {
     white-space: pre-wrap;
-}
-pre, code, samp, kbd {
-    font-family: "meslo-lg", monospace;
-    font-size: 0.8em;
-}
-table {
-    border-collapse: collapse;
-    margin: auto;
-}
-th, td {
-    border: 1px solid;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-}
-th {
-    text-align: inherit;
-}
-caption {
-    margin-bottom: 0.25em;
-}
-img {
-    display: flex;
-    margin: auto;
-}
-figcaption {
-    text-align: center;
-    margin-top: 0.25em;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 20em;
-}
-pre {
-    border: 1.5px solid;
-    padding: 0.5em;
-}
-code {
-    border: 1.5px solid;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
-}
-/* toots */
-.toot {
-    border: 1px solid;
-    margin-left: 5em;
-    margin-right: 5em;
-}
-.toot-h {
-    padding: 0.1em;
-    background-color: black;
-    color: white;
-}
-.toot p, i, strong {
-    padding: 0.5em;
+    font-size: 0.95em;
 }
 @media (prefers-color-scheme: dark) {
-    body {
-        color: #F5F5F5;
-        background-color: #212121;
-    }
     a {
         color: #FFE57F;
     }
-    pre, code, th, td {
-        border-color: white;
-    }
-    .toot-h {
-        background-color: white;
-        color: black;
+    body {
+        color: white;
+        background-color: black;
     }
 }
