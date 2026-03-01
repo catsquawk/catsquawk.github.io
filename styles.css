@@ -1,25 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @font-face {
-  font-family: "meslo-lg";
-  src: url(meslo-lg.ttf);
-  font-weight: bold;
+    font-family: "haskoy";
+    src: url("Haskoy-ExtraBold.ttf");
+    font-weight: bold;
 }
-body, pre {
-    font-family: "meslo-lg";
-    overflow-wrap: break-word;
+@font-face {
+    font-family: "haskoy";
+    src: url("Haskoy-Medium.ttf");
+    font-style: normal;
+}
+.header {
+    background-color: #E3F2FD;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: white;
+}
+.header strong {
+    color: #1E88E5;
+    font-weight: 800;
+    font-family: "JetBrains Mono", sans-serif;
+    font-size: 1.5em;
+    padding-right: 0.5em;
+}
+.header a {
+    padding-right: 0.5em;
+    font-family: "JetBrains Mono";
+}
+.content {
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: white;
     max-width: 35em;
     margin: auto;
-    padding: 1em;
 }
-pre {
-    white-space: pre-wrap;
+body {
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+    font-size: 1.025rem;
+    margin: 0;
+    line-height: 1.25;
+}
+pre, code, kbd, samp {
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.95em;
 }
+pre {
+    background-color: #E3F2FD;
+    padding: 0.3em;
+    border: 3px solid #E3F2FD;
+    border-radius: 5px;
+    color: #0D47A1;
+}
+a {
+    color: #2196F3;
+}
+img {
+    max-height: 15em;
+    margin: auto;
+    display: flex;
+}
+figcaption {
+    max-width: 20em;
+    margin: auto;
+    font-size: 0.95em;
+    display: flex;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+th, td {
+    padding: 0.2em;
+    border: 1px solid;
+    max-width: 15em;
+}
 @media (prefers-color-scheme: dark) {
-    a {
-        color: #FFE57F;
-    }
-    body {
-        color: white;
+    body, .content {
         background-color: black;
+        color: #CECDC3;
+    }
+    .header, pre {
+        background-color: #12253b;
+        border-color: #12253b;
+    }
+    pre {
+        color: #c6dde8;
+    }
+    .header strong, a {
+        color: #66a0c8;
     }
 }
