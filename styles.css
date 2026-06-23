@@ -25,7 +25,6 @@
 
 body {
     margin: 0;
-    font-size: 1.1rem;
     background: var(--bg);
     color: var(--tx);
 }
@@ -47,11 +46,18 @@ code {
     border: 1.5px solid var(--ui-3);
 }
 
-img:not(.images img) {
+.images img {
+    max-width: none;
+    max-height: none;
+    display: inline;
+    margin: 0;
+}
+
+img {
     max-width: calc(var(--content-width) - 3em);
-    display: flex;
-    margin: auto;
     max-height: 15rem;
+    display: block;
+    margin: auto;
 }
 
 table { border-collapse: collapse; border: 2px solid var(--ui-3); margin: auto; max-width: var(--content-width);}
