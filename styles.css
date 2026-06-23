@@ -24,6 +24,7 @@
 }
 
 body {
+    font-size: 1.09rem;
     margin: 0;
     background: var(--bg);
     color: var(--tx);
@@ -56,7 +57,7 @@ code {
 
 img {
     min-width: 60%;
-    max-width: 100%;
+    max-width: 85%;
     max-height: 15rem;
     display: block;
     margin: auto;
@@ -97,7 +98,7 @@ a.external::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 12vh;
+    height: 11vh;
 }
 
 .content {
