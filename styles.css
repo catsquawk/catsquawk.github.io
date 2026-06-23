@@ -42,7 +42,7 @@ pre {
 code {
     background-color: var(--ui-2);
     color: var(--tx-2);
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0.1rem;
     border: 1.5px solid var(--ui-3);
 }
