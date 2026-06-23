@@ -48,13 +48,15 @@ code {
 
 .images img {
     max-width: none;
+    min-width: 0%;
     max-height: none;
     display: inline;
     margin: 0;
 }
 
 img {
-    max-width: calc(var(--content-width) - 6em);
+    min-width: 50%;
+    max-width: 90%;
     max-height: 15rem;
     display: block;
     margin: auto;
