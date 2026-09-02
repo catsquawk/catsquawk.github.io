@@ -1,19 +1,30 @@
 @font-face {
-  font-family: 'cmu-typewriter';
-  src: url('./cmunbtl.woff') format('woff');
+  font-family: 'go-mono';
+  src: url('./go-mono.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'cmu-typewriter-italic';
-  src: url('./cmunbto.woff') format('woff');
+  font-family: 'go-mono';
+  src: url('./go-mono-italic.woff') format('woff');
   font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'go-mono';
+  src: url('./go-mono-bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'go-mono';
+  src: url('./go-mono-bold-italic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
 body {
-    font-family: "cmu-typewriter", monospace;
-    font-size: 1.1rem;
+    font-family: "go-mono", monospace;
+    font-size: 1rem;
     max-width: 38em;
     margin: auto;
     padding-top: 3rem;
@@ -21,8 +32,6 @@ body {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
-
-i { font-family: "cmu-typewriter-italic"; }
 
 pre, code, kbd {
     font-family: "cmu-typewriter";
