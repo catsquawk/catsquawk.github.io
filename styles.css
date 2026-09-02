@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+
 body, td {
     font-family: "STIX Two Text", Times, serif;
     font-size: 1.13rem;
@@ -12,10 +13,10 @@ body, td {
 }
 
 pre, code, kbd {
-    font-family: "cmu-typewriter";
+    font-family: monospace;
 }
 
-code { border: 1px solid; font-size: 0.95rem; padding: 0.15rem; }
+code { font-size: 0.95rem; padding: 0.15rem; }
 
 pre {
     padding: 1em;
