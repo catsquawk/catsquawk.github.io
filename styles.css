@@ -28,6 +28,8 @@ pre, code, kbd {
     font-family: "cmu-typewriter";
 }
 
+code { border: 1px solid; font-size: 0.95rem; padding: 0.15rem; }
+
 pre {
     padding: 1em;
     background-color: #eee;
