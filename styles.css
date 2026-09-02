@@ -1,6 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@font-face {
+  font-family: 'cmu-typewriter';
+  src: url('./cmunbtl.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cmu-typewriter-italic';
+  src: url('./cmunbto.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "cmu-typewriter", monospace;
     font-size: 1.1rem;
     max-width: 38em;
     margin: auto;
@@ -10,9 +22,10 @@ body {
     padding-right: 1.5rem;
 }
 
+i { font-family: "cmu-typewriter-italic"; }
+
 pre, code, kbd {
-    font-family: "Google Sans Code";
-    font-size: 0.95rem;
+    font-family: "cmu-typewriter";
 }
 
 pre {
