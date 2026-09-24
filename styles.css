@@ -16,7 +16,7 @@ border-bottom-color: blue;
 border-bottom: thin dotted; }
 
 pre, code, kbd {
-    font-family: "cmu-typewriter";
+    font-family: monospace;
 }
 
 code { border: 1px solid; font-size: 0.95rem; padding: 0.15rem; }
